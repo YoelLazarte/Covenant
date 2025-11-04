@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "title": "Ingeniero de Software (React)",
+    "company": "Tech Solutions Inc.",
+    "location": "Remoto",
+    "description": "Buscamos un ingeniero de Software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener habilidades de comunicacion.",
+    "data": {
+      "modality": "remoto",
+      "technology": "React",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Desarrollador Backend (Node.js)",
+    "company": "Innovatech",
+    "location": "Ciudad de México, MX",
+    "description": "Empresa líder en soluciones fintech busca un desarrollador Backend Mid/Senior con sólida experiencia en Node.js, Express y bases de datos SQL/NoSQL. Se valorará experiencia en microservicios.",
+    "data": {
+      "modality": "cdmx",
+      "technology": "Node.js",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Data Scientist",
+    "company": "QuantumLeap AI",
+    "location": "Buenos Aires, AR",
+    "description": "Startup de Inteligencia Artificial en crecimiento busca un Data Scientist para unirse a nuestro equipo. Experiencia requerida en Python (Pandas, Scikit-learn, TensorFlow) y modelos de Machine Learning.",
+    "data": {
+      "modality": "caba",
+      "technology": "Python",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Frontend Developer (Vue.js)",
+    "company": "WebWeavers",
+    "location": "Monterrey, MX",
+    "description": "Agencia de diseño digital necesita un desarrollador Frontend con al menos 2 años de experiencia en Vue.js. Se requiere un buen ojo para el detalle y experiencia trabajando con Figma.",
+    "data": {
+      "modality": "monterrey",
+      "technology": "Vue.js",
+      "level": "junior"
+    }
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudNet Global",
+    "location": "Barcelona, ES",
+    "description": "Buscamos un Ingeniero DevOps Sr. para gestionar nuestra infraestructura en AWS. Experiencia indispensable en Kubernetes, Terraform y CI/CD (Jenkins/GitLab CI).",
+    "data": {
+      "modality": "barcelona",
+      "technology": "AWS",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Full Stack Developer (Angular / .NET)",
+    "company": "ByteBuilders",
+    "location": "Remoto",
+    "description": "Consultora de software busca un Full Stack Developer para proyecto en el sector bancario. Se requiere experiencia en Angular (versión 10+) y .NET Core.",
+    "data": {
+      "modality": "remoto",
+      "technology": "Angular",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Mobile Developer (Android)",
+    "company": "MobileFirst Apps",
+    "location": "Ciudad de México, MX",
+    "description": "Desarrollador Android con experiencia en Kotlin y Jetpack Compose. Serás responsable de mantener y crear nuevas funcionalidades para nuestra app de e-commerce.",
+    "data": {
+      "modality": "cdmx",
+      "technology": "Kotlin",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 8,
+    "title": "QA Automation Engineer",
+    "company": "CodeCrafters",
+    "location": "Buenos Aires, AR",
+    "description": "Estamos buscando un Ingeniero de QA Automation para diseñar y ejecutar planes de prueba automatizados. Experiencia con Selenium, Cypress y herramientas de integración continua.",
+    "data": {
+      "modality": "caba",
+      "technology": "Selenium",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Ingeniero de Datos (Data Engineer)",
+    "company": "InfiniData",
+    "location": "Monterrey, MX",
+    "description": "Únete a nuestro equipo de BI como Ingeniero de Datos. Buscamos experiencia en la creación de pipelines de datos (ETL) usando Spark y Airflow, y conocimientos de SQL avanzado.",
+    "data": {
+      "modality": "monterrey",
+      "technology": "Spark",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Desarrollador Java Sr.",
+    "company": "Fintech Dynamics",
+    "location": "Barcelona, ES",
+    "description": "Importante banco digital requiere un Desarrollador Java Senior con experiencia en Spring Boot, microservicios y arquitectura orientada a eventos (Kafka).",
+    "data": {
+      "modality": "barcelona",
+      "technology": "Java",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Cloud Architect (Azure)",
+    "company": "EcoTech Solutions",
+    "location": "Remoto",
+    "description": "Buscamos un Arquitecto Cloud con certificación en Azure para liderar la migración de nuestros sistemas on-premise a la nube. Debe definir la estrategia y mejores prácticas.",
+    "data": {
+      "modality": "remoto",
+      "technology": "Azure",
+      "level": "lead"
+    }
+  },
+  {
+    "id": 12,
+    "title": "UI/UX Designer",
+    "company": "PixelPerfect",
+    "location": "Ciudad de México, MX",
+    "description": "Diseñador UI/UX con portafolio sólido para rediseñar nuestra plataforma SaaS. Dominio de Figma, Sketch y metodologías de Design Thinking. Colaborará directamente con el equipo de frontend.",
+    "data": {
+      "modality": "cdmx",
+      "technology": "Figma",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Backend Developer (Go)",
+    "company": "SynthoLogic",
+    "location": "Buenos Aires, AR",
+    "description": "Startup en rápido crecimiento busca desarrolladores Go (Golang) para construir sistemas de alta concurrencia. Se valora experiencia en gRPC y Docker.",
+    "data": {
+      "modality": "caba",
+      "technology": "Go",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Desarrollador .NET",
+    "company": "HealthApp Innovators",
+    "location": "Monterrey, MX",
+    "description": "Empresa del sector salud busca un desarrollador .NET (C#) para mantener y evolucionar su software de gestión de pacientes. Experiencia en WinForms y/o WPF es un plus.",
+    "data": {
+      "modality": "monterrey",
+      "technology": ".NET",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Frontend Trainee (React)",
+    "company": "AgileMinds",
+    "location": "Barcelona, ES",
+    "description": "Oportunidad para un desarrollador Trainee o Junior con bases sólidas en HTML, CSS y JavaScript. Se ofrece capacitación intensiva en React y metodologías ágiles (Scrum).",
+    "data": {
+      "modality": "barcelona",
+      "technology": "React",
+      "level": "trainee"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Ingeniero de Seguridad (CyberSec)",
+    "company": "CyberSec Partners",
+    "location": "Remoto",
+    "description": "Especialista en Ciberseguridad para realizar pentesting y análisis de vulnerabilidades en aplicaciones web y móviles. Se requieren certificaciones (ej. OSCP).",
+    "data": {
+      "modality": "remoto",
+      "technology": "Pentesting",
+      "level": "senior"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Desarrollador Python (Django)",
+    "company": "Data Systems Co.",
+    "location": "Ciudad de México, MX",
+    "description": "Buscamos un desarrollador Python con experiencia en el framework Django y Django Rest Framework para construir APIs robustas para nuestros clientes.",
+    "data": {
+      "modality": "cdmx",
+      "technology": "Python",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Tech Lead - Mobile (iOS)",
+    "company": "MobileFirst Apps",
+    "location": "Buenos Aires, AR",
+    "description": "Líder Técnico para nuestro equipo de iOS. Debe tener amplia experiencia en Swift, SwiftUI y gestión de equipos. Será responsable de la arquitectura y la calidad del código.",
+    "data": {
+      "modality": "caba",
+      "technology": "Swift",
+      "level": "lead"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Desarrollador Ruby on Rails",
+    "company": "NextGen Software",
+    "location": "Monterrey, MX",
+    "description": "Desarrollador RoR Mid-level para unirse a un proyecto de e-commerce de larga duración. Experiencia en RSpec, Sidekiq y PostgreSQL.",
+    "data": {
+      "modality": "monterrey",
+      "technology": "Ruby",
+      "level": "mid"
+    }
+  },
+  {
+    "id": 20,
+    "title": "SRE (Site Reliability Engineer)",
+    "company": "CloudNet Global",
+    "location": "Barcelona, ES",
+    "description": "Ingeniero SRE para monitorear y mejorar la fiabilidad de nuestros sistemas distribuidos. Fuerte conocimiento en Kubernetes, Prometheus, Grafana y automatización con Ansible.",
+    "data": {
+      "modality": "barcelona",
+      "technology": "Kubernetes",
+      "level": "senior"
+    }
+  }
+]
