@@ -13,7 +13,8 @@ function JobCard({ job }){
   <>
     <article 
       data-technology={job.data.technology} 
-      data-modalidad={job.data.modality} 
+      data-modality={job.data.modality} 
+      data-level={job.data.level} 
       className="job-listings-card">
       <div>
         <h3>{job.title}</h3>

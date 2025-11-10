@@ -1,5 +1,7 @@
+import styles from '../css/Pagination.module.css'
 
-function Pagination({ currentPage = 1 , totalPages = 10, onPageChange }) {
+
+export function Pagination({ currentPage = 1 , totalPages = 10, onPageChange }) {
 
   const pages = Array.from({ length: totalPages }, ( _, i) => i + 1)
 
@@ -32,7 +34,7 @@ function Pagination({ currentPage = 1 , totalPages = 10, onPageChange }) {
   }
 
   return (
-    <nav className="pagination">
+    <nav className={styles.pagination}>
       {
         !isFistPage && (
           <a href="#" onClick={handlePrevClick} style={stylePrevButton}>
@@ -58,7 +60,7 @@ function Pagination({ currentPage = 1 , totalPages = 10, onPageChange }) {
           href="#"
           key={page} 
           onClick={(event) => handleChangePage(event, page)}
-          className={currentPage === page ? 'is-active' : ''}
+          className={currentPage === page ? styles.isActive : ''}
         >{page}</a>
       )) }
 
@@ -86,5 +88,3 @@ function Pagination({ currentPage = 1 , totalPages = 10, onPageChange }) {
     </nav>
   );
 }
-
-export default Pagination;

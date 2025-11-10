@@ -1,60 +1,75 @@
-import { JobsListings } from '../components/JobsListings.jsx'
+import { useState } from 'react'
 
-export function Empleos({ data }) {
+import { SearchFormSection } from '../components/SearchFormSection.jsx'
+import { JobsListings } from '../components/JobsListings.jsx'
+import { Pagination } from '../components/Pagination.jsx';
+
+import data from '../data.json'
+
+
+const RESULTS_PER_PAGE = 5;
+
+
+
+export function Empleos() {
+  const [filters, setFilters] = useState({
+    technology: '',
+    modality: '', 
+    level: '',
+  })
+  const [textToFilter, setTextToFilter] = useState('')
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const jobsFilteredByFilters = data.filter(job => { 
+    return(
+      (filters.technology === '' || job.data.technology === filters.technology)
+      && (filters.modality === '' || job.data.modality === filters.modality)
+      && (filters.level === '' || job.data.level === filters.level)
+    )
+  })
+
+  console.log('filtros : ', jobsFilteredByFilters)
+  
+  const jobsWithTextFilter = textToFilter === ''
+  ? jobsFilteredByFilters
+  : jobsFilteredByFilters.filter(job => {
+    return job.title.toLowerCase().includes(textToFilter.toLowerCase())
+    || job.company.toLowerCase().includes(textToFilter.toLowerCase())
+  })
+  
+  console.log('texto filtrado : ', jobsWithTextFilter)
+
+  const totalPages = Math.ceil(jobsWithTextFilter.length / RESULTS_PER_PAGE)
+
+  const pagedResuls = jobsWithTextFilter.slice(
+    (currentPage - 1) * RESULTS_PER_PAGE,
+    currentPage * RESULTS_PER_PAGE
+  )
+
+  const handlePageChange = (newPage) => {
+    console.log(`Página cambiada a ${newPage}`);
+    setCurrentPage(newPage)
+  }
+
+  const handleSearch = (newFilters) => {
+    setFilters(newFilters)
+    setCurrentPage(1)
+  }
+
+  const handleTextFilter = (newTextToFilter) => {
+    setTextToFilter(newTextToFilter);
+    setCurrentPage(1)
+  }
+
+
   return(
     <>
-    <section>
-        <h1>Encuentra tu proxima trabajo</h1>
-        <p>Explora miles de oportunidades en el sector tecnologico</p>
+      <section>
+        <SearchFormSection onSearch={handleSearch} onTextFilter={handleTextFilter}/>
+      </section>
 
-      <form id="empleos-search-form" role="search">
-        <div className="search-bar">
-          <span>
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-search">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-              <path d="M21 21l-6 -6" />
-            </svg>
-          </span>
-  
-          <input name="search" id="empleos-search-input" required type="text" placeholder="Buscar trabajos, empresas o habilidades" />
-        </div>
-
-        <div className="search-filters">
-          <select name="technology" id="filter-technology">
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Tecnologia">Tecnologia</option>
-          </select>
-
-          <select name="location" id="filter-location">
-              <option value="">Ubicación</option>
-              <option value="remoto">Remoto</option>
-              <option value="cdmx">Ciudad de México</option>
-              <option value="caba">Buenos Aires</option>
-              <option value="monterrey">Monterrey</option>
-              <option value="barcelona">Barcelona</option>
-          </select>
-
-          <select name="selectedOption" id="myDropdown">
-            <option value="Tipo de contrato">Tipo de contrato</option>
-            <option value="Tipo de contrato">Tipo de contrato</option>
-            <option value="Tipo de contrato">Tipo de contrato</option>
-          </select>
-
-          <select name="selectedOption" id="myDropdown">
-            <option value="Nivel de experiencia">Nivel de experiencia</option>
-            <option value="Nivel de experiencia">Nivel de experiencia</option>
-            <option value="Nivel de experiencia">Nivel de experiencia</option>
-          </select>
-        </div>
-      </form>
-
-      <span id="filter-selected-value"></span>
-    </section>
-    
-    <JobsListings jobs={data}/>
-
-  </>
+      <JobsListings jobs={pagedResuls}/>
+      <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}/>
+    </>
   )
 }
