@@ -1,11 +1,13 @@
+import { Link } from "./Links.jsx";
+
 function Navbar(){
   return (
     <>
       <header>
         <h2>DevJob</h2>
         <nav>
-          <a href="./index.html">Inicio</a>
-          <a href="./empleos.html">Empleos</a>
+          <Link href='/'>Inicio</Link>
+          <Link href='/search'>Empleos</Link>
         </nav>
 
         <div>

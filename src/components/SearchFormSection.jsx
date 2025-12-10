@@ -1,36 +1,81 @@
-import { useId } from "react";
+import { useEffect, useId, useState, useRef } from "react";
 
-export function SearchFormSection({ onSearch, onTextFilter }){
-  const idText = useId();
-  const idTechnology = useId();
-  const idModality = useId();
-  const idExperienceLevel = useId();
+const useSearchForm = ({ idTechnology, idLocation, idExperienceLevel, onSearch, onTextFilter, idText }) => {
+  const timeoutId = useRef(null)
+  const [searchText, setSearchText] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-
+    // event.targe || event.currentTarget
+    const formData = new FormData(event.currentTarget);
+    
+    if(event.target.name === idText){
+      return
+    }
+    
     const filters = {
       search: formData.get(idText),
       technology: formData.get(idTechnology),
-      modality: formData.get(idModality),
-      level: formData.get(idExperienceLevel),
+      location: formData.get(idLocation),
+      experienceLevel: formData.get(idExperienceLevel),
     }
 
     onSearch(filters);
-    console.log(filters);
+    // console.log(filters);
   }
 
   const handleTextChange = (event) => {
     const inputValue = event.target.value;
-    onTextFilter(inputValue);
+    setSearchText(inputValue); // Actualizamos el imput inmediatamente
+
+    // DEBOUNCE: Cancelar el timeout anterior
+    if(timeoutId.current) {
+      clearTimeout(timeoutId.current)
+    }
+
+    timeoutId.current = setTimeout(() => {
+      onTextFilter(inputValue);
+    }, 500)
   }
+
+  return {
+    searchText,
+    handleSubmit,
+    handleTextChange,
+  }
+}
+
+export function SearchFormSection({ onSearch, onTextFilter, initialtext }){
+  const idText = useId();
+  const idTechnology = useId();
+  const idLocation = useId();
+  const idExperienceLevel = useId();
+  const inputRef = useRef(null);
+  console.log('que mierda llega aca', initialtext)
+  const {
+    // searchText, 
+    handleSubmit,
+    handleTextChange 
+  } = useSearchForm({
+      idTechnology, 
+      idLocation, 
+      idExperienceLevel, 
+      onSearch, 
+      onTextFilter,
+      idText});
+  
+  const handleClearInput = (event) => {
+    event.preventDefault();
+    inputRef.current.value = '';
+    onTextFilter("");
+  }
+  
 
   return (
     <>
       <h1>Encuentra tu proxima trabajo</h1>
       <p>Explora miles de oportunidades en el sector tecnologico</p>
-      <form onSubmit={handleSubmit} id="empleos-search-form" role="search">
+      <form onChange={handleSubmit} id="empleos-search-form" role="search">
         <div className="search-bar">
           <span>
             <svg
@@ -42,14 +87,16 @@ export function SearchFormSection({ onSearch, onTextFilter }){
             </svg>
           </span>
 
-            <input
-              name={idText}
-              onChange={handleTextChange}
-              id="empleos-search-input"
-              type="text"
-              placeholder="Buscar trabajos, empresas o habilidades"
-            />
-            <button type="submit">buscar</button>
+          <input
+            ref={inputRef}
+            name={idText} id="empleos-search-input" type="text"
+            placeholder="Buscar trabajos, empresas o habilidades"
+            onChange={handleTextChange}
+            defaultValue={initialtext}
+          />
+
+          <button onClick={handleClearInput}> x </button>
+
         </div>
         <div className="search-filters">
           <select name={idTechnology} id="filter-technology">
@@ -59,11 +106,11 @@ export function SearchFormSection({ onSearch, onTextFilter }){
             <option value="node">Node</option>
           </select>
 
-          <select name={idModality} id="filter-location">
+          <select name={idLocation} id="filter-location">
             <option value="">Ubicación</option>
             <option value="remoto">Remoto</option>
             <option value="cdmx">Ciudad de México</option>
-            <option value="caba">Buenos Aires</option>
+            <option value="guadalajara">Guadalajara</option>
             <option value="monterrey">Monterrey</option>
             <option value="barcelona">Barcelona</option>
           </select>
