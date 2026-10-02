@@ -4,7 +4,7 @@ function Navbar(){
   return (
     <>
       <header>
-        <h2>DevJob</h2>
+        <h2>Covenant</h2>
         <nav>
           <Link href='/'>Inicio</Link>
           <Link href='/search'>Empleos</Link>

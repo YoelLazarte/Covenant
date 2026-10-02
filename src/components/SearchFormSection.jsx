@@ -51,7 +51,7 @@ export function SearchFormSection({ onSearch, onTextFilter, initialtext }){
   const idLocation = useId();
   const idExperienceLevel = useId();
   const inputRef = useRef(null);
-  console.log('que mierda llega aca', initialtext)
+  console.log('que llega aca', initialtext)
   const {
     // searchText, 
     handleSubmit,

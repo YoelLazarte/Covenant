@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { Link } from '../components/Links.jsx';
+import styles from '../css/JobCard.module.css'
 
 function JobCard({ job }){
   const [apply, setapply] = useState(false);
@@ -17,14 +19,23 @@ function JobCard({ job }){
       data-level={job.data.nivel} 
       className="job-listings-card">
       <div>
-        <h3>{job.titulo}</h3>
+        <h3>
+          <Link className={styles.title} href={`/jobs/${job.id}`}>
+            {job.titulo}
+          </Link>/
+        </h3>
         <small>{job.empresa} | {job.ubicacion}</small>
         <p>{job.descripcion}</p>
       </div>
-      <button 
-        className={buttonClasses}
-        onClick={handleButton}
-        >{buttonText}</button>
+
+      <div className={styles.actions}>
+        <Link href={`/jobs/${job.id}`} className={styles.details}>Ver detalles</Link>
+        <button 
+          className={buttonClasses}
+          onClick={handleButton}
+        > {buttonText}</button>
+
+      </div>
     </article>
   </>
   )

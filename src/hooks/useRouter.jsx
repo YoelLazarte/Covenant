@@ -1,29 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router';
 
 export function useRouter(){
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-
-  useEffect(() => {
-    const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname)
-    }
-    window.addEventListener('popstate', handleLocationChange)
-    // Limpiamos la subscripcio del evento popstate
-    return () => {
-      window.removeEventListener('popstate', handleLocationChange)
-      setCurrentPath(window.location.pathname)
-    } 
-  }, [])
+  const navigate = useNavigate();
+  const location = useLocation();
 
   //Esta logica se puede utilizar en el componente link   
   function navigateTo(path){
-    window.history.pushState({}, "", path)
-    // popstate es un evento especial que nos indica que esta cambiando la url
-    window.dispatchEvent(new PopStateEvent('popstate'))
+    navigate(path)
   }
 
   return {
-    currentPath,
+    currentPath: location.pathname,
     navigateTo
   }
 

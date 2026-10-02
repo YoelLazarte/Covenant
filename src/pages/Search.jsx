@@ -25,8 +25,8 @@ export function Search() {
 
     <section>
       <header>
-        <h2>Porque DevJobs?</h2>
-        <p>DevJobs es la principal plataforma de busqueda de empleo para desarrolladores. Conectamos a los mejores talentos con las empresas mas innovadoras</p>
+        <h2>Porque Covenant?</h2>
+        <p>Covenant es la principal plataforma de busqueda de empleo para desarrolladores. Conectamos a los mejores talentos con las empresas mas innovadoras</p>
       </header>
       
       <footer>

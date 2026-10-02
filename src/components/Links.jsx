@@ -1,15 +1,10 @@
-import { useRouter } from "../hooks/useRouter"
+// import { useRouter } from "../hooks/useRouter"
+import { Link as NavLink } from "react-router" 
 
 export function Link ({href, children, ...restProps}){
-  const { navigateTo } = useRouter()
-  const handleClick = (event) => {
-    event.preventDefault()
-    navigateTo(href)
-  }
-  
   return(
-    <a href={href} {...restProps} onClick={handleClick}>
+    <NavLink to={href} {...restProps}>
       {children}
-    </a>
+    </NavLink>
   )
 }
